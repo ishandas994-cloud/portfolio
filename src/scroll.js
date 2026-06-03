@@ -174,3 +174,51 @@ export function initScrollAnimations() {
       },
     })
   })
+
+  // ═══════════════════════════════════════
+  // SECTION TAGS — fade in
+  // ═══════════════════════════════════════
+  const sectionTags = document.querySelectorAll('.section-tag')
+
+  sectionTags.forEach((tag) => {
+    ScrollTrigger.create({
+      trigger: tag,
+      start:   'top 88%',
+      onEnter: () => {
+        gsap.fromTo(
+          tag,
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }
+        )
+      },
+    })
+  })
+
+  // ═══════════════════════════════════════
+  // NAVBAR — hide on scroll down,
+  //          show on scroll up
+  // ═══════════════════════════════════════
+  let lastScrollY = 0
+
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY
+
+    if (currentScrollY > lastScrollY && currentScrollY > 100) {
+      // Scrolling down — hide navbar
+      gsap.to('.navbar', {
+        y:        -80,
+        duration: 0.4,
+        ease:     'power2.in',
+      })
+    } else {
+      // Scrolling up — show navbar
+      gsap.to('.navbar', {
+        y:        0,
+        duration: 0.4,
+        ease:     'power2.out',
+      })
+    }
+
+    lastScrollY = currentScrollY
+  })
+}
