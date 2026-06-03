@@ -26,7 +26,8 @@ export function initScrollAnimations() {
       },
     })
   })
- // ═══════════════════════════════════════
+
+  // ═══════════════════════════════════════
   // SKILL BARS — animate width on scroll
   // ═══════════════════════════════════════
   const skillFills = document.querySelectorAll('.skill-fill')
@@ -47,6 +48,7 @@ export function initScrollAnimations() {
       },
     })
   })
+
   // ═══════════════════════════════════════
   // SKILL CARDS — stagger on scroll
   // ═══════════════════════════════════════
@@ -76,7 +78,8 @@ export function initScrollAnimations() {
       },
     })
   })
-   // ═══════════════════════════════════════
+
+  // ═══════════════════════════════════════
   // PROJECT CARDS — stagger on scroll
   // ═══════════════════════════════════════
   const projectCards = document.querySelectorAll('.project-card')
@@ -133,7 +136,8 @@ export function initScrollAnimations() {
       },
     })
   })
- // ═══════════════════════════════════════
+
+  // ═══════════════════════════════════════
   // ABOUT SECTION — image and text
   // ═══════════════════════════════════════
   ScrollTrigger.create({
@@ -156,6 +160,7 @@ export function initScrollAnimations() {
       )
     },
   })
+
   // ═══════════════════════════════════════
   // SECTION TITLES — fade in
   // ═══════════════════════════════════════
