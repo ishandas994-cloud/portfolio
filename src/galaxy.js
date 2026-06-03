@@ -121,3 +121,27 @@ export function initGalaxy() {
     mouseX = (e.clientX / window.innerWidth  - 0.5) * 0.5
     mouseY = (e.clientY / window.innerHeight - 0.5) * 0.5
   })
+ // ═══════════════════════════════════════
+  // ANIMATION LOOP
+  // ═══════════════════════════════════════
+  const clock = new THREE.Clock()
+
+  const animate = () => {
+    requestAnimationFrame(animate)
+
+    const elapsedTime = clock.getElapsedTime()
+
+    // Rotate galaxy slowly
+    if (points) {
+      points.rotation.y = elapsedTime * 0.05
+    }
+
+    // Smooth mouse parallax on camera
+    camera.position.x += (mouseX  - camera.position.x) * 0.02
+    camera.position.y += (-mouseY - camera.position.y) * 0.02
+    camera.lookAt(scene.position)
+
+    renderer.render(scene, camera)
+  }
+
+  animate()
