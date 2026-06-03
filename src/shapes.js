@@ -85,3 +85,13 @@ export function initShapes() {
   )
   tetrahedron.position.set(2.5, -1, -2)
   scene.add(tetrahedron)
+
+  // ═══════════════════════════════════════
+  // SHAPE 5 — Small Sphere (top left)
+  // ═══════════════════════════════════════
+  const sphere = new THREE.Mesh(
+    new THREE.SphereGeometry(0.4, 8, 8),
+    matNeon2
+  )
+  sphere.position.set(-2, -1.5, -1)
+  scene.add(sphere)
