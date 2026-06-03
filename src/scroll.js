@@ -105,3 +105,31 @@ export function initScrollAnimations() {
       },
     })
   })
+
+  // ═══════════════════════════════════════
+  // CONTACT ITEMS — stagger on scroll
+  // ═══════════════════════════════════════
+  const contactItems = document.querySelectorAll('.contact-item')
+
+  contactItems.forEach((item, i) => {
+    ScrollTrigger.create({
+      trigger: item,
+      start:   'top 88%',
+      onEnter: () => {
+        gsap.fromTo(
+          item,
+          {
+            opacity: 0,
+            x:       -40,
+          },
+          {
+            opacity:  1,
+            x:        0,
+            duration: 0.7,
+            delay:    i * 0.15,
+            ease:     'power3.out',
+          }
+        )
+      },
+    })
+  })
