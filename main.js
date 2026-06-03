@@ -89,6 +89,7 @@ navAnchors.forEach(a => {
     navLinks.classList.remove('open')
   })
 })
+
 // ═══════════════════════════════════════
 // CONTACT FORM — mailto fallback
 // ═══════════════════════════════════════
