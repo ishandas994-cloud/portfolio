@@ -72,3 +72,20 @@ window.addEventListener('scroll', () => {
     }
   })
 })
+
+// ═══════════════════════════════════════
+// HAMBURGER MENU — mobile
+// ═══════════════════════════════════════
+const hamburger = document.getElementById('hamburger')
+const navLinks  = document.getElementById('nav-links')
+
+hamburger?.addEventListener('click', () => {
+  navLinks.classList.toggle('open')
+})
+
+// Close menu when a link is clicked
+navAnchors.forEach(a => {
+  a.addEventListener('click', () => {
+    navLinks.classList.remove('open')
+  })
+})
