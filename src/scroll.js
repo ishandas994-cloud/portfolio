@@ -133,3 +133,26 @@ export function initScrollAnimations() {
       },
     })
   })
+ // ═══════════════════════════════════════
+  // ABOUT SECTION — image and text
+  // ═══════════════════════════════════════
+  ScrollTrigger.create({
+    trigger: '#about',
+    start:   'top 70%',
+    onEnter: () => {
+
+      // Image slides in from left
+      gsap.fromTo(
+        '.about-left',
+        { opacity: 0, x: -80 },
+        { opacity: 1, x: 0, duration: 1, ease: 'power3.out' }
+      )
+
+      // Text slides in from right
+      gsap.fromTo(
+        '.about-right',
+        { opacity: 0, x: 80 },
+        { opacity: 1, x: 0, duration: 1, delay: 0.2, ease: 'power3.out' }
+      )
+    },
+  })
