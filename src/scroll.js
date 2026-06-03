@@ -47,3 +47,32 @@ export function initScrollAnimations() {
       },
     })
   })
+  // ═══════════════════════════════════════
+  // SKILL CARDS — stagger on scroll
+  // ═══════════════════════════════════════
+  const skillCards = document.querySelectorAll('.skill-card')
+
+  skillCards.forEach((card, i) => {
+    ScrollTrigger.create({
+      trigger: card,
+      start:   'top 88%',
+      onEnter: () => {
+        gsap.fromTo(
+          card,
+          {
+            opacity: 0,
+            y:       50,
+            scale:   0.95,
+          },
+          {
+            opacity:  1,
+            y:        0,
+            scale:    1,
+            duration: 0.6,
+            delay:    i * 0.08,
+            ease:     'power3.out',
+          }
+        )
+      },
+    })
+  })
