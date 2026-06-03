@@ -48,6 +48,7 @@ export function initShapes() {
     transparent: true,
     opacity:     0.3,
   })
+
   // ═══════════════════════════════════════
   // SHAPE 1 — Icosahedron (left side)
   // ═══════════════════════════════════════
@@ -57,7 +58,8 @@ export function initShapes() {
   )
   icosahedron.position.set(-3.5, 0.5, -2)
   scene.add(icosahedron)
- // ═══════════════════════════════════════
+
+  // ═══════════════════════════════════════
   // SHAPE 2 — Torus (right side)
   // ═══════════════════════════════════════
   const torus = new THREE.Mesh(
@@ -66,6 +68,7 @@ export function initShapes() {
   )
   torus.position.set(3.5, 1, -1)
   scene.add(torus)
+
   // ═══════════════════════════════════════
   // SHAPE 3 — Octahedron (bottom center)
   // ═══════════════════════════════════════
@@ -95,6 +98,7 @@ export function initShapes() {
   )
   sphere.position.set(-2, -1.5, -1)
   scene.add(sphere)
+
   // ═══════════════════════════════════════
   // ANIMATION LOOP
   // ═══════════════════════════════════════

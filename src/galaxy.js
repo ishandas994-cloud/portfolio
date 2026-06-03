@@ -24,6 +24,7 @@ export function initGalaxy() {
   renderer.setSize(window.innerWidth, window.innerHeight)
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
   camera.position.z = 3
+
   // ═══════════════════════════════════════
   // GALAXY PARAMETERS
   // ═══════════════════════════════════════
@@ -42,7 +43,8 @@ export function initGalaxy() {
   let geometry = null
   let material = null
   let points   = null
- // ═══════════════════════════════════════
+
+  // ═══════════════════════════════════════
   // GENERATE GALAXY
   // ═══════════════════════════════════════
   const generateGalaxy = () => {
@@ -111,7 +113,8 @@ export function initGalaxy() {
   }
 
   generateGalaxy()
-    // ═══════════════════════════════════════
+
+  // ═══════════════════════════════════════
   // MOUSE PARALLAX
   // ═══════════════════════════════════════
   let mouseX = 0
@@ -121,7 +124,8 @@ export function initGalaxy() {
     mouseX = (e.clientX / window.innerWidth  - 0.5) * 0.5
     mouseY = (e.clientY / window.innerHeight - 0.5) * 0.5
   })
- // ═══════════════════════════════════════
+
+  // ═══════════════════════════════════════
   // ANIMATION LOOP
   // ═══════════════════════════════════════
   const clock = new THREE.Clock()
