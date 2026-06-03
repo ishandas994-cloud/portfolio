@@ -66,3 +66,22 @@ export function initShapes() {
   )
   torus.position.set(3.5, 1, -1)
   scene.add(torus)
+  // ═══════════════════════════════════════
+  // SHAPE 3 — Octahedron (bottom center)
+  // ═══════════════════════════════════════
+  const octahedron = new THREE.Mesh(
+    new THREE.OctahedronGeometry(0.7, 0),
+    matNeon3
+  )
+  octahedron.position.set(0.5, -2.5, -1)
+  scene.add(octahedron)
+
+  // ═══════════════════════════════════════
+  // SHAPE 4 — Tetrahedron (top right)
+  // ═══════════════════════════════════════
+  const tetrahedron = new THREE.Mesh(
+    new THREE.TetrahedronGeometry(0.6, 0),
+    matNeon
+  )
+  tetrahedron.position.set(2.5, -1, -2)
+  scene.add(tetrahedron)
