@@ -475,3 +475,76 @@ body {
   color: var(--text);
   font-weight: 500;
 }
+/* ═══════════════════════════════════════
+   SKILLS SECTION
+═══════════════════════════════════════ */
+#skills {
+  padding: 8rem 4rem;
+  background: var(--bg);
+}
+
+.skills-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.skill-card {
+  background: var(--card-bg);
+  border: 0.5px solid var(--card-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: left;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.skill-card:hover {
+  border-color: var(--neon);
+  box-shadow: 0 0 25px rgba(0, 255, 242, 0.12);
+  transform: translateY(-5px);
+}
+
+.skill-icon {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+.skill-card h3 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.skill-bar {
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 0.4rem;
+}
+
+.skill-fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--neon), var(--neon2));
+  border-radius: 2px;
+  box-shadow: 0 0 8px var(--neon);
+  transition: width 1.5s ease;
+}
+
+.skill-percent {
+  font-size: 0.75rem;
+  color: var(--neon);
+  font-weight: 600;
+}
