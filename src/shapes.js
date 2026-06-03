@@ -57,3 +57,12 @@ export function initShapes() {
   )
   icosahedron.position.set(-3.5, 0.5, -2)
   scene.add(icosahedron)
+ // ═══════════════════════════════════════
+  // SHAPE 2 — Torus (right side)
+  // ═══════════════════════════════════════
+  const torus = new THREE.Mesh(
+    new THREE.TorusGeometry(0.9, 0.25, 8, 30),
+    matNeon2
+  )
+  torus.position.set(3.5, 1, -1)
+  scene.add(torus)
