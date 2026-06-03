@@ -89,3 +89,46 @@ navAnchors.forEach(a => {
     navLinks.classList.remove('open')
   })
 })
+// ═══════════════════════════════════════
+// CONTACT FORM — mailto fallback
+// ═══════════════════════════════════════
+const form       = document.getElementById('contact-form')
+const formStatus = document.getElementById('form-status')
+const sendBtn    = document.getElementById('send-btn')
+
+form?.addEventListener('submit', (e) => {
+  e.preventDefault()
+
+  const name    = document.getElementById('fname').value.trim()
+  const email   = document.getElementById('femail').value.trim()
+  const message = document.getElementById('fmessage').value.trim()
+
+  if (!name || !email || !message) {
+    formStatus.textContent = '⚠️ Please fill in all fields.'
+    formStatus.style.color = '#ff00aa'
+    return
+  }
+
+  sendBtn.textContent = 'Sending...'
+  sendBtn.disabled    = true
+
+  // Opens user's default email client
+  const subject  = encodeURIComponent(`Portfolio Contact from ${name}`)
+  const body     = encodeURIComponent(
+    `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+  )
+  const mailto   = `mailto:ishandas994@gmail.com?subject=${subject}&body=${body}`
+
+  window.location.href = mailto
+
+  formStatus.textContent = '✅ Opening your email client...'
+  formStatus.style.color = '#00fff2'
+
+  sendBtn.textContent = 'Send Message'
+  sendBtn.disabled    = false
+  form.reset()
+
+  setTimeout(() => {
+    formStatus.textContent = ''
+  }, 5000)
+})
