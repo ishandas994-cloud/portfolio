@@ -772,3 +772,26 @@ body {
   min-height: 1.2rem;
   margin-top: 0.3rem;
 }
+/* ═══════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════ */
+.footer {
+  padding: 2.5rem;
+  text-align: center;
+  background: var(--bg2);
+  border-top: 0.5px solid var(--card-border);
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  line-height: 1.8;
+}
+
+.footer-sub {
+  font-size: 0.75rem;
+  color: rgba(136, 136, 170, 0.5);
+  margin-top: 0.3rem;
+}
+
+.neon {
+  color: var(--neon);
+  font-weight: 700;
+}
