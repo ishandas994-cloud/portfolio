@@ -26,3 +26,24 @@ export function initScrollAnimations() {
       },
     })
   })
+ // ═══════════════════════════════════════
+  // SKILL BARS — animate width on scroll
+  // ═══════════════════════════════════════
+  const skillFills = document.querySelectorAll('.skill-fill')
+
+  skillFills.forEach((fill) => {
+    const targetWidth = fill.dataset.width + '%'
+
+    ScrollTrigger.create({
+      trigger: fill,
+      start:   'top 90%',
+      onEnter: () => {
+        gsap.to(fill, {
+          width:    targetWidth,
+          duration: 1.5,
+          delay:    0.3,
+          ease:     'power3.out',
+        })
+      },
+    })
+  })
