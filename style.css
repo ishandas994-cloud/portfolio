@@ -1,0 +1,32 @@
+/* ═══════════════════════════════════════
+   RESET & ROOT VARIABLES
+═══════════════════════════════════════ */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --neon:        #00fff2;
+  --neon2:       #bf00ff;
+  --neon3:       #ff00aa;
+  --bg:          #050510;
+  --bg2:         #0a0a1a;
+  --bg3:         #0f0f2a;
+  --text:        #e0e0ff;
+  --text-muted:  #8888aa;
+  --card-bg:     rgba(255, 255, 255, 0.03);
+  --card-border: rgba(0, 255, 242, 0.15);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
