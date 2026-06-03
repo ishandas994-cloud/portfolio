@@ -42,3 +42,72 @@ export function initGalaxy() {
   let geometry = null
   let material = null
   let points   = null
+ // ═══════════════════════════════════════
+  // GENERATE GALAXY
+  // ═══════════════════════════════════════
+  const generateGalaxy = () => {
+
+    // Dispose old galaxy if exists
+    if (points) {
+      geometry.dispose()
+      material.dispose()
+      scene.remove(points)
+    }
+
+    geometry = new THREE.BufferGeometry()
+
+    const positions = new Float32Array(params.count * 3)
+    const colors    = new Float32Array(params.count * 3)
+
+    const colorInside  = new THREE.Color(params.insideColor)
+    const colorOutside = new THREE.Color(params.outsideColor)
+
+    for (let i = 0; i < params.count; i++) {
+      const i3 = i * 3
+
+      // Position
+      const radius      = Math.random() * params.radius
+      const branchAngle = ((i % params.branches) / params.branches) * Math.PI * 2
+      const spinAngle   = radius * params.spin
+
+      const randomX = Math.pow(Math.random(), params.power) *
+                      (Math.random() < 0.5 ? 1 : -1) *
+                      params.randomness * radius
+
+      const randomY = Math.pow(Math.random(), params.power) *
+                      (Math.random() < 0.5 ? 1 : -1) *
+                      params.randomness * radius
+
+      const randomZ = Math.pow(Math.random(), params.power) *
+                      (Math.random() < 0.5 ? 1 : -1) *
+                      params.randomness * radius
+
+      positions[i3]     = Math.cos(branchAngle + spinAngle) * radius + randomX
+      positions[i3 + 1] = randomY
+      positions[i3 + 2] = Math.sin(branchAngle + spinAngle) * radius + randomZ
+
+      // Color — lerp from inside to outside color
+      const mixedColor = colorInside.clone()
+      mixedColor.lerp(colorOutside, radius / params.radius)
+
+      colors[i3]     = mixedColor.r
+      colors[i3 + 1] = mixedColor.g
+      colors[i3 + 2] = mixedColor.b
+    }
+
+    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3))
+    geometry.setAttribute('color',    new THREE.BufferAttribute(colors, 3))
+
+    material = new THREE.PointsMaterial({
+      size:            params.size,
+      sizeAttenuation: true,
+      depthWrite:      false,
+      blending:        THREE.AdditiveBlending,
+      vertexColors:    true,
+    })
+
+    points = new THREE.Points(geometry, material)
+    scene.add(points)
+  }
+
+  generateGalaxy()
