@@ -30,3 +30,9 @@ body {
   color: var(--text);
   overflow-x: hidden;
 }
+/* ═══════════════════════════════════════
+   SCROLLBAR
+═══════════════════════════════════════ */
+::-webkit-scrollbar        { width: 4px; }
+::-webkit-scrollbar-track  { background: var(--bg); }
+::-webkit-scrollbar-thumb  { background: var(--neon); border-radius: 2px; }
