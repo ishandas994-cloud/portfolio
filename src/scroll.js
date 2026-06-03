@@ -76,3 +76,32 @@ export function initScrollAnimations() {
       },
     })
   })
+   // ═══════════════════════════════════════
+  // PROJECT CARDS — stagger on scroll
+  // ═══════════════════════════════════════
+  const projectCards = document.querySelectorAll('.project-card')
+
+  projectCards.forEach((card, i) => {
+    ScrollTrigger.create({
+      trigger: card,
+      start:   'top 85%',
+      onEnter: () => {
+        gsap.fromTo(
+          card,
+          {
+            opacity:  0,
+            y:        60,
+            rotateX:  8,
+          },
+          {
+            opacity:  1,
+            y:        0,
+            rotateX:  0,
+            duration: 0.8,
+            delay:    i * 0.15,
+            ease:     'power3.out',
+          }
+        )
+      },
+    })
+  })
