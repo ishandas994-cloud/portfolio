@@ -123,3 +123,53 @@ body {
   border-radius: 2px;
   transition: all 0.3s ease;
 }
+/* ═══════════════════════════════════════
+   BUTTONS
+═══════════════════════════════════════ */
+.btn-primary {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background: transparent;
+  border: 1.5px solid var(--neon);
+  color: var(--neon);
+  border-radius: 4px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 255, 242, 0.15);
+}
+
+.btn-primary:hover {
+  background: var(--neon);
+  color: var(--bg);
+  box-shadow: 0 0 35px rgba(0, 255, 242, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background: transparent;
+  border: 1.5px solid var(--neon2);
+  color: var(--neon2);
+  border-radius: 4px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(191, 0, 255, 0.15);
+}
+
+.btn-outline:hover {
+  background: var(--neon2);
+  color: #ffffff;
+  box-shadow: 0 0 35px rgba(191, 0, 255, 0.4);
+  transform: translateY(-2px);
+}
