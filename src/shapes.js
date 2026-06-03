@@ -95,3 +95,52 @@ export function initShapes() {
   )
   sphere.position.set(-2, -1.5, -1)
   scene.add(sphere)
+  // ═══════════════════════════════════════
+  // ANIMATION LOOP
+  // ═══════════════════════════════════════
+  const clock = new THREE.Clock()
+
+  const animate = () => {
+    requestAnimationFrame(animate)
+
+    const t = clock.getElapsedTime()
+
+    // Rotate each shape uniquely
+    icosahedron.rotation.x = t * 0.3
+    icosahedron.rotation.y = t * 0.2
+    icosahedron.rotation.z = t * 0.1
+
+    torus.rotation.x = t * 0.4
+    torus.rotation.z = t * 0.3
+
+    octahedron.rotation.x = t * 0.5
+    octahedron.rotation.y = t * 0.3
+
+    tetrahedron.rotation.x = t * 0.2
+    tetrahedron.rotation.y = t * 0.4
+    tetrahedron.rotation.z = t * 0.3
+
+    sphere.rotation.y = t * 0.6
+
+    // Float up and down
+    icosahedron.position.y  = 0.5  + Math.sin(t * 0.5) * 0.3
+    torus.position.y        = 1    + Math.sin(t * 0.4 + 1) * 0.4
+    octahedron.position.y   = -2.5 + Math.sin(t * 0.6 + 2) * 0.3
+    tetrahedron.position.y  = -1   + Math.sin(t * 0.3 + 3) * 0.3
+    sphere.position.y       = -1.5 + Math.sin(t * 0.7 + 4) * 0.2
+
+    renderer.render(scene, camera)
+  }
+
+  animate()
+
+  // ═══════════════════════════════════════
+  // RESIZE HANDLER
+  // ═══════════════════════════════════════
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight
+    camera.updateProjectionMatrix()
+    renderer.setSize(window.innerWidth, window.innerHeight)
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+  })
+}
