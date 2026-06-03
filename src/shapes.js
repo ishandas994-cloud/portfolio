@@ -48,3 +48,12 @@ export function initShapes() {
     transparent: true,
     opacity:     0.3,
   })
+  // ═══════════════════════════════════════
+  // SHAPE 1 — Icosahedron (left side)
+  // ═══════════════════════════════════════
+  const icosahedron = new THREE.Mesh(
+    new THREE.IcosahedronGeometry(1.2, 0),
+    matNeon
+  )
+  icosahedron.position.set(-3.5, 0.5, -2)
+  scene.add(icosahedron)
