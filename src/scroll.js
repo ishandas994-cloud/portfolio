@@ -156,3 +156,21 @@ export function initScrollAnimations() {
       )
     },
   })
+  // ═══════════════════════════════════════
+  // SECTION TITLES — fade in
+  // ═══════════════════════════════════════
+  const sectionTitles = document.querySelectorAll('.section-title')
+
+  sectionTitles.forEach((title) => {
+    ScrollTrigger.create({
+      trigger: title,
+      start:   'top 85%',
+      onEnter: () => {
+        gsap.fromTo(
+          title,
+          { opacity: 0, y: 30 },
+          { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }
+        )
+      },
+    })
+  })
