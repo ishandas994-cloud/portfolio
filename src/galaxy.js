@@ -111,3 +111,13 @@ export function initGalaxy() {
   }
 
   generateGalaxy()
+    // ═══════════════════════════════════════
+  // MOUSE PARALLAX
+  // ═══════════════════════════════════════
+  let mouseX = 0
+  let mouseY = 0
+
+  window.addEventListener('mousemove', (e) => {
+    mouseX = (e.clientX / window.innerWidth  - 0.5) * 0.5
+    mouseY = (e.clientY / window.innerHeight - 0.5) * 0.5
+  })
